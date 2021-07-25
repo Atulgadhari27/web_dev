@@ -45,9 +45,11 @@ function fn(rPath)
         let destFilePath = path.join(folderPath,currFile);
 
         fs.copyFileSync(srcFilePath,destFilePath);
-        console.log(currFile, "belongs to --> ", eleType);
+        console.log(currFile, " belongs to --> ", eleType);
         fs.unlinkSync(srcFilePath);
     }
+
+    console.log("Files Organized Successfully")
 }
 
 module.exports = {
