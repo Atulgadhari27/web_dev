@@ -17,7 +17,7 @@ if(command == "help")
 }
 if(command == "tree")
 {
-    treeObj.tree(arr[1],0);
+    treeObj.tree(arr[1]);
     return;
 }
 

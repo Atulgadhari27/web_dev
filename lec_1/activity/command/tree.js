@@ -1,30 +1,22 @@
 let fs = require("fs");
 let path = require("path");
 
-function fn(rPath,spaces)
+function fn(filePath)
 {
-    let currPath = rPath;
-    let content = fs.readdirSync(currPath);
-    for(let i = 0;i < content.length;i++)
+    let stat = fs.statSync(filePath);
+    let baseName = path.basename(filePath);
+    if(stat.isFile())
     {
-        let currFile = content[i];
-        let currFilePath = path.join(currPath,currFile);
-        let statsOfFile = fs.lstatSync(currFilePath);
-
-        if(statsOfFile.isDirectory()){
-            for(let i = 0;i < spaces;i++)
-            {
-                process.stdout.write("\t");
-            }
-            console.log(currFile);
-            fn(currFilePath,spaces + 1);
-        }
-        else{
-            for(let i = 0;i < spaces;i++)
-            {
-                process.stdout.write("\t");
-            }
-            console.log(currFile);
+        console.log("\t|-- > " + baseName);
+    }
+    else
+    {
+        let content = fs.readdirSync(filePath);
+        console.log("|-- > " + baseName);
+        for(let i = 0;i < content.length;i++)
+        {
+            let currPath = path.join(filePath,content[i])
+            fn(currPath);
         }
     }
 }
