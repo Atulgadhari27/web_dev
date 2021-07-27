@@ -3,10 +3,10 @@ let fs = require("fs");
 let path = require("path");
 
 let types = {
-    Media : [".mp4", '.mkv',".png",".jpeg",".jpg",""],
+    Media : [".mp4", '.mkv',".png",".jpeg",".jpg"],
     Archives : [".zip",".7z",".rar",".tar",".gz",".ar",".iso"],
     Documents : [".doc",".docx",".pdf",".xlsx",".xls",".odt",".pptx",".ppt"],
-    App : [".exe",".dmg",".pkg",".deb"]
+    App : [".exe",".dmg",".pkg",".deb",".msi"]
 };
 
 function fn(rPath)
@@ -19,6 +19,14 @@ function fn(rPath)
         let currFile = content[i];
         let extName = path.extname(currFile);
         let eleType = "Other";
+
+        let filePath = path.join(currPath,currFile);
+        let stats = fs.statSync(filePath);
+        if(stats.isDirectory())
+        {
+            fn(filePath);
+            continue;
+        }
         for(const key in types)
         {
             for(let j = 0;j < types[key].length;j++)
