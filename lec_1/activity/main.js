@@ -2,7 +2,7 @@
 let treeObj = require("./command/tree");
 let organizeObj = require("./command/organize");
 let helpObj = require("./command/help");
-const tree = require("./command/tree");
+let copyObj = require("./command/copy_paste");
 
 
 let arr = process.argv.slice(2);
@@ -20,7 +20,15 @@ if(command == "tree")
     treeObj.tree(arr[1]);
     return;
 }
+if(command == "organize")
+{
+    organizeObj.Organize(arr[1]);
+}
 
-organizeObj.Organize(arr[1]);
+if(command == "copy")
+{
+    copyObj.copy(arr[1], arr[2]);
+}
+    
 
 
