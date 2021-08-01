@@ -1,6 +1,5 @@
 let fs = require("fs");
 let path = require("path");
-const { setFlagsFromString } = require("v8");
 
 let inputArr = process.argv.slice(2);
 
