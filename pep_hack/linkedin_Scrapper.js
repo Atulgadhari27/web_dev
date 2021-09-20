@@ -21,9 +21,11 @@ let contactinfo = [];
         await page.type(`input[type="text"]`, "atulgadhari27@gmail.com", { delay: 100 });
         await page.type(`input[type="password"]`, "Atul@0987", { delay: 100 });
         await page.keyboard.press("Enter");
+        console.log("Login Successful");
         await page.waitForSelector(`input[placeholder="Search"]`, { visible: true });
         await page.type(`input[placeholder="Search"]`, "recruiter", { delay: 100 });
         await page.keyboard.press("Enter");
+        console.log("Searching for Recruiters")
         await page.waitForSelector(`#search-reusables__filters-bar li`, { visible: true });
         let arr = await page.$$(`#search-reusables__filters-bar li`);
         let ptag;
@@ -36,7 +38,7 @@ let contactinfo = [];
         await ptag.click();
 
         await page.waitForSelector(`.entity-result__title-text.t-16`, { visible: true });
-        for (let i = 1; i <= 5; i++) {
+        for (let i = 1; i <= 10; i++) {
             await autoScroll(page);
             let linkArr = await page.$$(`.entity-result__title-text.t-16 a`);
             let nameArr = await page.$$(`span[dir='ltr'] span[aria-hidden='true']`);
@@ -54,12 +56,16 @@ let contactinfo = [];
                     "desc" : desc,
                 });
             }
+
+            console.log("Page " + i + " loaded sucessfully");
             await page.waitForSelector("button[aria-label='Next']");
             await page.click("button[aria-label='Next']");
         }
+
+        console.log("All Data collected");
         makepdf();
-        page.close();
-        browser.close();
+       // page.close();
+        //browser.close();
 
 
     }
