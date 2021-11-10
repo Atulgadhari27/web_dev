@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Clone</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div class="displaymsg">
+        <div class="photomsg">
+            Photo Captured Successfully
+        </div>
+        <div class="videomsg">
+            Video Captured Successfully
+        </div>
+    </div>
+    <div class="filter">
+        <div class="r">
+            R
+            <input type="range" id="r" min="0" max="256" oninput="this.nextElementSibling.value = this.value">
+            <output>0</output>
+        </div>
+        <div class="g">
+            G
+            <input type="range" id="g" min="0" max="256" oninput="this.nextElementSibling.value = this.value">
+            <output>0</output>
+        </div>
+        <div class="b">
+            B
+            <input type="range" id="b" min="0" max="256" oninput="this.nextElementSibling.value = this.value">
+            <output>0</output>
+        </div>
+        <div class="a">
+            A
+            <input type="range" id="a" step="0.02" min="0" max="1" oninput="this.nextElementSibling.value = this.value">
+            <output>0</output>
+        </div>
+        <div class="discard">
+            <h3>Discard</h3>
+        </div>
+    </div>
+    <div class="video-player-cont">
+        <video autoplay></video>
+        <div class="record-symbol"></div>
+        <div class="filter-layer"></div>
+    </div>
+    <div class="btn-cont">
+        <div class="recordbtn active">
+            <span class="material-icons">
+                videocam
+            </span>
+        </div>
+        <div class="activebtn-cont">
+            <div class="active-btn">
+                <div class="record-btn deactive">
+                    <span class="material-icons">
+                        videocam
+                    </span>
+                </div>
+                <div class="capture-btn active">
+                    <span class="material-icons">
+                        photo_camera
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="capturebtn deactive">
+            <span class="material-icons">
+                photo_camera
+            </span>
+        </div>
+    </div>
+    <div class="timer-cont">
+        <h1 class="timer">00:00:00</h1>
+    </div>
+    <div class="zoom">
+        <div class="zoom-in">
+            <span class="material-icons">
+                zoom_in
+            </span>
+        </div>
+        <div class="zoom-out">
+            <span class="material-icons">
+                zoom_out
+            </span>
+        </div>
+    </div>
+    <div class="gallery">
+        <span class="material-icons">
+            collections
+        </span>
+    </div>
+
+    <script src="https://unpkg.com/shortid-dist@1.0.5/dist/shortid-2.2.13.min.js"></script>
+    <script src="./db.js"></script>
+    <script src="./script.js"></script>
+    <script>
+        let gallery = document.querySelector(".gallery");
+        gallery.addEventListener("click", (e) => {
+            location.assign("./gallery/gallery.html");
+        })
+    </script>
+</body>
+
+</html>
