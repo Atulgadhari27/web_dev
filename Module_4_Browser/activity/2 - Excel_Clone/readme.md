@@ -1,9 +1,45 @@
-This is a Excel application which have functions like addition, substraction, cut, copy, paste
+# Excel Web Application
+---
+## Overview
 
-There is also a formula bar where fomulas(like A1 + A2 - A5) can be evaluated
+This project is a web based application which have all major functionalities of Microsoft excel.
 
-To run this in your system, you just need to install NodeJS.
+---
+## Features
 
-Then download this project and open index.html file in your browser.
+- Different types of text formatting (like **Bold**,_Italic_,Underline, etc) added
+- Text Formatting also includes text color and text background color
+- **Cut, Copy, Paste** features are also added
+- We can add various number of sheets
+- **Multiple Sheets** can be handled at a time
+- **Formula evaluation** can be done in formula bar
+- **Interdependent Formulas** can also be used
+- **Cyclic Formula detection** is added using **Graph Data Structure**
 
-You are ready to go with the project running in your system
+---
+## Tech Used
+
+- [HTML]()
+- [CSS]()
+- [JavaScript](https://www.javascript.com/)
+- [Node.js](https://nodejs.org/)
+---
+## Demo
+Excel Clone requires [Node.js](https://nodejs.org/) v10+ to run.
+
+#### Text formatting
+
+![formatting](https://i.ibb.co/hgxVLfr/formatting.gif)
+
+#### Formula Evaluation
+
+![formula](https://i.ibb.co/xqXnJZr/formula.gif)
+
+#### Cut, Copy and Paste feature
+
+![cutPaste](https://i.ibb.co/QcMjcHQ/cutPaste.gif)
+
+#### Cyclic Formula Detection
+
+![cycle](https://i.ibb.co/6JzZRc2/Cyclic.gif)
+
