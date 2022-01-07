@@ -1,10 +1,8 @@
 # Excel Web Application
----
 ## Overview
 
 This project is a web based application which have all major functionalities of Microsoft excel.
 
----
 ## Features
 
 - Different types of text formatting (like **Bold**,_Italic_,Underline, etc) added
@@ -16,14 +14,14 @@ This project is a web based application which have all major functionalities of 
 - **Interdependent Formulas** can also be used
 - **Cyclic Formula detection** is added using **Graph Data Structure**
 
----
+
 ## Tech Used
 
 - [HTML]()
 - [CSS]()
 - [JavaScript](https://www.javascript.com/)
 - [Node.js](https://nodejs.org/)
----
+
 ## Demo
 Excel Clone requires [Node.js](https://nodejs.org/) v10+ to run.
 
